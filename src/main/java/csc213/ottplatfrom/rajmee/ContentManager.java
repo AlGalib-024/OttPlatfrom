@@ -1,6 +1,8 @@
 package csc213.ottplatfrom.rajmee;
 
-public class ContentManager extends user {
+import csc213.ottplatfrom.NusratJahan.AppUser;
+
+public class ContentManager extends AppUser {
     private int managerId;
     private String department;
 
@@ -34,4 +36,4 @@ public class ContentManager extends user {
 
     public Analytics viewAnalytics(int contentId) {
         return new Analytics();
-    }
+    }}

@@ -1,6 +1,8 @@
 package csc213.ottplatfrom.rajmee;
 
-public class MarketingManager extends User {
+import csc213.ottplatfrom.NusratJahan.AppUser;
+
+public class MarketingManager extends AppUser {
 
     private int managerId;
     private String department;
@@ -28,4 +30,4 @@ public class MarketingManager extends User {
     public CampaignPerformance analyzeCampaign(int campaignId) {
         return new CampaignPerformance();
     }
-
+}

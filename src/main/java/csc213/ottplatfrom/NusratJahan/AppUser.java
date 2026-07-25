@@ -12,6 +12,9 @@ public class AppUser {
         this.displayName = displayName;
     }
 
+    public AppUser() {
+    }
+
     public String getUserId() {
         return userId;
     }
