@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.rajmee.AssignGenreController"
+            prefHeight="500.0"
+            prefWidth="700.0">
+
+    <children>
+
+        <Text layoutX="270.0"
+              layoutY="30.0"
+              text="Assign Genre"
+              style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+        <TableView fx:id="contentTable"
+                   layoutX="30.0"
+                   layoutY="60.0"
+                   prefWidth="640.0"
+                   prefHeight="220.0">
+
+            <columns>
+
+                <TableColumn fx:id="idColumn"
+                             text="ID"
+                             prefWidth="60.0"/>
+
+                <TableColumn fx:id="titleColumn"
+                             text="Title"
+                             prefWidth="220.0"/>
+
+                <TableColumn fx:id="typeColumn"
+                             text="Type"
+                             prefWidth="120.0"/>
+
+                <TableColumn fx:id="genreColumn"
+                             text="Current Genre"
+                             prefWidth="180.0"/>
+
+            </columns>
+
+        </TableView>
+
+        <Label layoutX="30.0"
+               layoutY="310.0"
+               text="New Genre:"/>
+
+        <ComboBox fx:id="genreComboBox"
+                  layoutX="140.0"
+                  layoutY="305.0"
+                  prefWidth="180.0"/>
+
+        <Button text="Assign Genre"
+                layoutX="350.0"
+                layoutY="305.0"
+                onAction="#handleAssignGenre"/>
+
+        <Label fx:id="messageLabel"
+               layoutX="30.0"
+               layoutY="360.0"/>
+
+        <Button text="Back"
+                layoutX="30.0"
+                layoutY="410.0"
+                onAction="#handleBack"/>
+
+    </children>
+
+</AnchorPane>

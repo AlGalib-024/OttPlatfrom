@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
@@ -13,57 +11,67 @@
             prefWidth="700.0">
 
     <children>
-        <VBox alignment="TOP_CENTER"
-              spacing="10.0"
-              AnchorPane.topAnchor="20.0"
-              AnchorPane.leftAnchor="20.0"
-              AnchorPane.rightAnchor="20.0"
-              AnchorPane.bottomAnchor="20.0">
 
-            <padding>
-                <Insets top="30.0" right="30.0" bottom="30.0" left="30.0"/>
-            </padding>
+        <Label layoutX="215.0"
+               layoutY="30.0"
+               text="Content Manager Dashboard"
+               style="-fx-font-size:20px; -fx-font-weight:bold;"/>
 
-            <Label text="Content Manager Dashboard"
-                   style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+        <Button layoutX="220.0"
+                layoutY="80.0"
+                prefWidth="250.0"
+                text="Add Movie/Series"
+                onAction="#goAddContent"/>
 
-            <Button text="Add Movie/Series"
-                    maxWidth="Infinity"
-                    onAction="#goAddContent"/>
+        <Button layoutX="220.0"
+                layoutY="120.0"
+                prefWidth="250.0"
+                text="Edit Content Details"
+                onAction="#goEditContent"/>
 
-            <Button text="Edit Content Details"
-                    maxWidth="Infinity"
-                    onAction="#goEditContent"/>
+        <Button layoutX="220.0"
+                layoutY="160.0"
+                prefWidth="250.0"
+                text="Delete Content"
+                onAction="#goDeleteContent"/>
 
-            <Button text="Delete Content"
-                    maxWidth="Infinity"
-                    onAction="#goDeleteContent"/>
+        <Button layoutX="220.0"
+                layoutY="200.0"
+                prefWidth="250.0"
+                text="Upload Subtitle"
+                onAction="#goUploadSubtitle"/>
 
-            <Button text="Upload Subtitle"
-                    maxWidth="Infinity"
-                    onAction="#goUploadSubtitle"/>
+        <Button layoutX="220.0"
+                layoutY="240.0"
+                prefWidth="250.0"
+                text="Add Episode"
+                onAction="#goAddEpisode"/>
 
-            <Button text="Add Episode"
-                    maxWidth="Infinity"
-                    onAction="#goAddEpisode"/>
+        <Button layoutX="220.0"
+                layoutY="280.0"
+                prefWidth="250.0"
+                text="Assign Genre"
+                onAction="#goAssignGenre"/>
 
-            <Button text="Assign Genre"
-                    maxWidth="Infinity"
-                    onAction="#goAssignGenre"/>
+        <Button layoutX="220.0"
+                layoutY="320.0"
+                prefWidth="250.0"
+                text="Mark Featured Content"
+                onAction="#goMarkFeatured"/>
 
-            <Button text="Mark Featured Content"
-                    maxWidth="Infinity"
-                    onAction="#goMarkFeatured"/>
+        <Button layoutX="220.0"
+                layoutY="360.0"
+                prefWidth="250.0"
+                text="View Content Analytics"
+                onAction="#goContentAnalytics"/>
 
-            <Button text="View Content Analytics"
-                    maxWidth="Infinity"
-                    onAction="#goContentAnalytics"/>
+        <Button layoutX="220.0"
+                layoutY="410.0"
+                prefWidth="250.0"
+                text="Sign Out"
+                style="-fx-text-fill:red;"
+                onAction="#goLogout"/>
 
-            <Button text="Sign Out"
-                    style="-fx-text-fill:red;"
-                    onAction="#goLogout"/>
-
-        </VBox>
     </children>
 
 </AnchorPane>

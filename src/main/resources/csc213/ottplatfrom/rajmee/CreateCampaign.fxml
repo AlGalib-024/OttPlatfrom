@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.rajmee.CreateCampaignController"
+            prefHeight="650.0"
+            prefWidth="800.0">
+
+    <Text layoutX="250.0" layoutY="30.0"
+          text="Create Marketing Campaign"
+          style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+    <Label layoutX="40.0" layoutY="70.0" text="Campaign Name"/>
+    <TextField fx:id="campaignNameField"
+               layoutX="180.0" layoutY="65.0"
+               prefWidth="220.0"/>
+
+    <Label layoutX="40.0" layoutY="120.0" text="Campaign Type"/>
+    <ComboBox fx:id="campaignTypeComboBox"
+              layoutX="180.0" layoutY="115.0"
+              prefWidth="220.0"/>
+
+    <Label layoutX="40.0" layoutY="170.0" text="Start Date"/>
+    <DatePicker fx:id="startDatePicker"
+                layoutX="180.0" layoutY="165.0"/>
+
+    <Label layoutX="40.0" layoutY="220.0" text="End Date"/>
+    <DatePicker fx:id="endDatePicker"
+                layoutX="180.0" layoutY="215.0"/>
+
+    <Label layoutX="40.0" layoutY="270.0" text="Status"/>
+
+    <RadioButton fx:id="activeRadioButton"
+                 layoutX="180.0" layoutY="265.0"
+                 text="Active"/>
+
+    <RadioButton fx:id="inactiveRadioButton"
+                 layoutX="280.0" layoutY="265.0"
+                 text="Inactive"/>
+
+    <Label fx:id="messageLabel"
+           layoutX="180.0"
+           layoutY="315.0"
+           text=""/>
+
+    <Button text="Save"
+            layoutX="180.0"
+            layoutY="350.0"
+            onAction="#handleSaveCampaign"/>
+
+    <Button text="Clear"
+            layoutX="270.0"
+            layoutY="350.0"
+            onAction="#handleClear"/>
+
+    <Button text="Back"
+            layoutX="360.0"
+            layoutY="350.0"
+            onAction="#handleBack"/>
+
+    <Text layoutX="40.0"
+          layoutY="420.0"
+          text="Campaign List"
+          style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+    <TableView fx:id="campaignTable"
+               layoutX="40.0"
+               layoutY="440.0"
+               prefWidth="700.0"
+               prefHeight="180.0">
+
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="70.0"/>
+            <TableColumn fx:id="nameColumn" text="Campaign Name" prefWidth="180.0"/>
+            <TableColumn fx:id="typeColumn" text="Type" prefWidth="120.0"/>
+            <TableColumn fx:id="startColumn" text="Start Date" prefWidth="120.0"/>
+            <TableColumn fx:id="endColumn" text="End Date" prefWidth="120.0"/>
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="90.0"/>
+        </columns>
+
+    </TableView>
+
+</AnchorPane>
