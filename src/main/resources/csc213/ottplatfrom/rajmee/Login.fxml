@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.rajmee.LoginController"
+            prefHeight="500.0"
+            prefWidth="700.0">
+
+    <children>
+
+        <Text layoutX="240.0"
+              layoutY="50.0"
+              text="OTT Platform Login"
+              style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="180.0"
+               layoutY="100.0"
+               text="User ID / Email"/>
+
+        <TextField fx:id="userIdField"
+                   layoutX="180.0"
+                   layoutY="120.0"
+                   prefWidth="300.0"
+                   promptText="Enter User ID or Email"/>
+
+        <Label layoutX="180.0"
+               layoutY="170.0"
+               text="Password"/>
+
+        <PasswordField fx:id="passwordField"
+                       layoutX="180.0"
+                       layoutY="190.0"
+                       prefWidth="300.0"
+                       promptText="Enter Password"/>
+
+        <Label layoutX="180.0"
+               layoutY="240.0"
+               text="Login As (Role)"/>
+
+        <ComboBox fx:id="roleComboBox"
+                  layoutX="180.0"
+                  layoutY="260.0"
+                  prefWidth="300.0"
+                  promptText="Select Role"/>
+
+        <Label fx:id="errorLabel"
+               layoutX="180.0"
+               layoutY="310.0"
+               style="-fx-text-fill:red;"/>
+
+        <Button text="Login"
+                layoutX="220.0"
+                layoutY="360.0"
+                prefWidth="100.0"
+                defaultButton="true"
+                onAction="#handleLogin"/>
+
+        <Button text="Clear"
+                layoutX="360.0"
+                layoutY="360.0"
+                prefWidth="100.0"
+                onAction="#handleClear"/>
+
+    </children>
+
+</AnchorPane>
