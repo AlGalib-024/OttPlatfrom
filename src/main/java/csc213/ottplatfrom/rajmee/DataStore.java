@@ -81,4 +81,7 @@ public class DataStore {
     public static double simulatedRating(int id) {
         return Math.round(((id * 37) % 41 / 10.0 + 1.0) * 10.0) / 10.0;
     }
+
+    public static void init() {
+    }
 }

@@ -1,52 +1,130 @@
 package csc213.ottplatfrom.rajmee;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class CreateCampaignController
-{
-    @javafx.fxml.FXML
-    private TableColumn  endColumn;
-    @javafx.fxml.FXML
-    private DatePicker startDatePicker;
-    @javafx.fxml.FXML
+public class CreateCampaignController {
+
+    @FXML
     private TextField campaignNameField;
-    @javafx.fxml.FXML
-    private RadioButton activeRadioButton;
-    @javafx.fxml.FXML
-    private TableColumn typeColumn;
-    @javafx.fxml.FXML
-    private Label messageLabel;
-    @javafx.fxml.FXML
+
+    @FXML
+    private ComboBox<String> campaignTypeComboBox;
+
+    @FXML
+    private DatePicker startDatePicker;
+
+    @FXML
     private DatePicker endDatePicker;
-    @javafx.fxml.FXML
-    private TableView<String> campaignTable;
-    @javafx.fxml.FXML
-    private TableColumn nameColumn;
-    @javafx.fxml.FXML
-    private TableColumn startColumn;
-    @javafx.fxml.FXML
-    private TableColumn statusColumn;
-    @javafx.fxml.FXML
-    private ComboBox campaignTypeComboBox;
-    @javafx.fxml.FXML
+
+    @FXML
+    private RadioButton activeRadioButton;
+
+    @FXML
     private RadioButton inactiveRadioButton;
-    @javafx.fxml.FXML
-    private TableColumn idColumn;
 
-    @javafx.fxml.FXML
+    @FXML
+    private Label messageLabel;
+
+    @FXML
+    private TableView<Campaign> campaignTable;
+
+    @FXML
+    private TableColumn<Campaign, Integer> idColumn;
+
+    @FXML
+    private TableColumn<Campaign, String> nameColumn;
+
+    @FXML
+    private TableColumn<Campaign, String> typeColumn;
+
+    @FXML
+    private TableColumn<Campaign, String> startColumn;
+
+    @FXML
+    private TableColumn<Campaign, String> endColumn;
+
+    @FXML
+    private TableColumn<Campaign, String> statusColumn;
+    @FXML
+    private ToggleGroup tg;
+
+    @FXML
     public void initialize() {
+
+        campaignTypeComboBox.getItems().addAll(
+                "Email",
+                "Social Media",
+                "TV",
+                "SMS",
+                "Website"
+        );
+
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("campaignId"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("campaignName"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        startColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
+        endColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        campaignTable.setItems(DataStore.campaigns);
     }
 
-    @javafx.fxml.FXML
-    public void handleBack(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
+    @FXML
     public void handleSaveCampaign(ActionEvent actionEvent) {
+
+        if (campaignNameField.getText().isBlank()
+                || campaignTypeComboBox.getValue() == null
+                || startDatePicker.getValue() == null
+                || endDatePicker.getValue() == null
+                || (!activeRadioButton.isSelected() && !inactiveRadioButton.isSelected())) {
+
+            messageLabel.setStyle("-fx-text-fill:red;");
+            messageLabel.setText("Please fill all fields.");
+            return;
+        }
+
+        String status = activeRadioButton.isSelected() ? "Active" : "Inactive";
+
+        Campaign campaign = new Campaign(
+                DataStore.nextCampaignId(),
+                campaignNameField.getText(),
+                campaignTypeComboBox.getValue(),
+                startDatePicker.getValue().toString(),
+                endDatePicker.getValue().toString(),
+                status
+        );
+
+        DataStore.campaigns.add(campaign);
+
+        messageLabel.setStyle("-fx-text-fill:green;");
+        messageLabel.setText("Campaign saved successfully.");
+
+        handleClear(null);
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleClear(ActionEvent actionEvent) {
+
+        campaignNameField.clear();
+        campaignTypeComboBox.setValue(null);
+        startDatePicker.setValue(null);
+        endDatePicker.setValue(null);
+        activeRadioButton.setSelected(false);
+        inactiveRadioButton.setSelected(false);
+        messageLabel.setText("");
+    }
+
+    @FXML
+    public void handleBack(ActionEvent actionEvent) {
+
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/csc213/ottplatfrom/rajmee/MarketingDashboard.fxml",
+                "Marketing Dashboard"
+        );
     }
 }

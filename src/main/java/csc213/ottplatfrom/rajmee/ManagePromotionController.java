@@ -1,38 +1,96 @@
 package csc213.ottplatfrom.rajmee;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-public class ManagePromotionController
-{
-    @javafx.fxml.FXML
-    private DatePicker endDatePicker;
-    @javafx.fxml.FXML
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
+public class ManagePromotionController implements Initializable {
+
+    @FXML
     private TextField promotionNameField;
-    @javafx.fxml.FXML
-    private TextField discountField;
-    @javafx.fxml.FXML
-    private DatePicker startDatePicker;
-    @javafx.fxml.FXML
-    private RadioButton couponRadio;
-    @javafx.fxml.FXML
-    private ComboBox audienceComboBox;
-    @javafx.fxml.FXML
-    private RadioButton specialOfferRadio;
-    @javafx.fxml.FXML
-    private RadioButton discountRadio;
-    @javafx.fxml.FXML
-    private Label messageLabel;
+    @FXML private RadioButton discountRadio;
+    @FXML private RadioButton couponRadio;
+    @FXML private RadioButton specialOfferRadio;
+    @FXML private TextField discountField;
+    @FXML private DatePicker startDatePicker;
+    @FXML private DatePicker endDatePicker;
+    @FXML private ComboBox<String> audienceComboBox;
+    @FXML private Label messageLabel;
 
-    @javafx.fxml.FXML
-    public void initialize() {
+    private static int promotionIdCounter = 1;
+    @FXML
+    private ToggleGroup tg;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        audienceComboBox.setItems(FXCollections.observableArrayList(
+                "All Subscribers", "Premium Subscribers", "Basic Subscribers", "New Users"
+        ));
     }
 
-    @javafx.fxml.FXML
-    public void handleBack(ActionEvent actionEvent) {
+    @FXML
+    private void handleSavePromotion(ActionEvent event) {
+        String name = promotionNameField.getText();
+        String type = getSelectedType();
+        String discountText = discountField.getText();
+        LocalDate start = startDatePicker.getValue();
+        LocalDate end = endDatePicker.getValue();
+
+        // VL: check required fields / verify discount percentage range / verify promotion duration
+        if (name == null || name.isBlank() || discountText == null || discountText.isBlank()
+                || start == null || end == null || !start.isBefore(end) || audienceComboBox.getValue() == null) {
+            messageLabel.setStyle("-fx-text-fill: red;");
+            messageLabel.setText("All fields are required and start date must be before end date.");
+            return;
+        }
+
+        int discount;
+        try {
+            discount = Integer.parseInt(discountText.trim());
+        } catch (NumberFormatException e) {
+            messageLabel.setStyle("-fx-text-fill: red;");
+            messageLabel.setText("Discount percentage must be a number.");
+            return;
+        }
+        if (discount <= 0 || discount > 100) {
+            messageLabel.setStyle("-fx-text-fill: red;");
+            messageLabel.setText("Discount percentage must be between 1 and 100.");
+            return;
+        }
+
+        // DP: save promotion, generate Promotion ID, activate promotion
+        int promotionId = promotionIdCounter++;
+        messageLabel.setStyle("-fx-text-fill: green;");
+        messageLabel.setText("Promotion created and activated successfully. Promotion ID: " + promotionId
+                + " (" + type + ", " + discount + "% off, for " + audienceComboBox.getValue() + ")");
+
+        promotionNameField.clear();
+        discountField.clear();
+        startDatePicker.setValue(null);
+        endDatePicker.setValue(null);
+        audienceComboBox.setValue(null);
     }
 
-    @javafx.fxml.FXML
-    public void handleSavePromotion(ActionEvent actionEvent) {
+    private String getSelectedType() {
+        if (discountRadio.isSelected()) return "Discount";
+        if (couponRadio.isSelected()) return "Coupon";
+        if (specialOfferRadio.isSelected()) return "Special Offer";
+        return "Discount";
+    }
+
+    @FXML
+    private void handleBack(ActionEvent event) {
+        SceneSwitcher.switchScene(
+                event,
+                "/csc213/ottplatfrom/rajmee/MarketingDashboard.fxml",
+
+                "Marketing Dashboard"
+        );
     }
 }

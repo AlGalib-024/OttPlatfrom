@@ -27,9 +27,30 @@ public class LoginController
 
     @javafx.fxml.FXML
     public void handleClear(ActionEvent actionEvent) {
+        userIdField.clear();
+        passwordField.clear();
+        roleComboBox.setValue(null);
+        errorLabel.setText("");
     }
 
     @javafx.fxml.FXML
     public void handleLogin(ActionEvent actionEvent) {
+        String userId = userIdField.getText();
+        String password = passwordField.getText();
+        String role = roleComboBox.getValue();
+
+        if (userId == null || userId.isBlank() || password == null || password.isBlank() || role == null) {
+            errorLabel.setText("User ID/email and password cannot be empty, and a role must be selected.");
+            return;
+        }
+
+        switch (role) {
+            case "Marketing Manager" ->
+                    SceneSwitcher.switchScene(actionEvent,"/csc213/ottplatfrom/rajmee/MarketingDashboard.fxml", "Marketing Manager Dashboard");
+            case "Content Manager" ->
+                    SceneSwitcher.switchScene(actionEvent,"/csc213/ottplatfrom/rajmee/ContentManagerDashboard.fxml", "Content Manager Dashboard");
+            default ->
+                    errorLabel.setText("Dashboard for '" + role + "' is not wired up yet in this build.");
+        }
     }
 }
