@@ -80,8 +80,9 @@ public class AddContentController {
 
     @FXML
     public void handleBack(ActionEvent actionEvent) {
-
-       SceneSwitcher.switchScene(actionEvent,"/csc213/ottplatfrom/rajmee/ManagePromotion.fxml","Marketing Dashboard");
-        // SceneSwitcher.switchScene("ContentManagerDashboard.fxml");
-    }
-}
+        SceneSwitcher.switchScene(
+                actionEvent,
+                "/csc213/ottplatfrom/rajmee/ContentManagerDashboard.fxml",
+                "Content Manager Dashboard"
+        );
+}}

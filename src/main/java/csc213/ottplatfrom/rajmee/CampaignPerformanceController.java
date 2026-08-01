@@ -11,7 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CampaignPerformanceController implements Initializable {
+public class CampaignPerformanceController  {
 
     @FXML
     private TableView<Campaign> campaignTable;
@@ -21,8 +21,8 @@ public class CampaignPerformanceController implements Initializable {
     @FXML private Label engagementLabel;
     @FXML private Label conversionLabel;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void initialize() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("campaignId"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("campaignName"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));

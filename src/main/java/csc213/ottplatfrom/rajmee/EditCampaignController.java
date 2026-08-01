@@ -10,7 +10,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class EditCampaignController implements Initializable {
+public class EditCampaignController  {
 
     @FXML
     private TableView<Campaign> campaignTable;
@@ -26,8 +26,8 @@ public class EditCampaignController implements Initializable {
 
     private Campaign selectedCampaign;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void initialize() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("campaignId"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("campaignName"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));

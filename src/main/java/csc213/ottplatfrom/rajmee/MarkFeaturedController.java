@@ -11,7 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MarkFeaturedController implements Initializable {
+public class MarkFeaturedController  {
 
     @FXML
     private TableView<Content> contentTable;
@@ -31,8 +31,8 @@ public class MarkFeaturedController implements Initializable {
     @FXML
     private Label messageLabel;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    public void initialize() {
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("contentId"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -89,8 +89,8 @@ public class MarkFeaturedController implements Initializable {
 
         SceneSwitcher.switchScene(
                 actionEvent,
-                "/csc213/ottplatfrom/rajmee/MarketingDashboard.fxml",
-                "Marketing Dashboard"
+                "/csc213/ottplatfrom/rajmee/ContentManagerDashboard.fxml",
+                "Content Manager Dashboard"
         );
     }
 }

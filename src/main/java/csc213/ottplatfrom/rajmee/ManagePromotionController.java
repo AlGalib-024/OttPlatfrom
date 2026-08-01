@@ -10,7 +10,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class ManagePromotionController implements Initializable {
+public class ManagePromotionController  {
 
     @FXML
     private TextField promotionNameField;
@@ -27,8 +27,7 @@ public class ManagePromotionController implements Initializable {
     @FXML
     private ToggleGroup tg;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() {
         audienceComboBox.setItems(FXCollections.observableArrayList(
                 "All Subscribers", "Premium Subscribers", "Basic Subscribers", "New Users"
         ));

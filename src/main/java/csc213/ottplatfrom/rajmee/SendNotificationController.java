@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SendNotificationController implements Initializable {
+public class SendNotificationController  {
 
     @FXML private TextField titleField;
     @FXML private TextArea messageField;
@@ -20,8 +20,8 @@ public class SendNotificationController implements Initializable {
     @FXML private ComboBox<String> audienceComboBox;
     @FXML private Label resultLabel;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void initialize() {
         typeComboBox.setItems(FXCollections.observableArrayList("Promotional", "Announcement", "Reminder"));
         audienceComboBox.setItems(FXCollections.observableArrayList(
                 "All Subscribers", "Premium Subscribers", "Basic Subscribers", "New Users", "Inactive Users"

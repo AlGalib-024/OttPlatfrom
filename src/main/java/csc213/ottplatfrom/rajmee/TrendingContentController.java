@@ -18,7 +18,7 @@ import java.util.Comparator;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
-public class TrendingContentController implements Initializable {
+public class TrendingContentController  {
 
     @FXML
     private ComboBox<String> periodComboBox;
@@ -29,8 +29,8 @@ public class TrendingContentController implements Initializable {
     @FXML private TableColumn<TrendingRow, Integer> viewsColumn;
     @FXML private TableColumn<TrendingRow, Double> ratingColumn;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void initialize() {
         periodComboBox.setItems(FXCollections.observableArrayList(
                 "Last 7 Days", "Last 30 Days", "Last 3 Months", "Last 6 Months"
         ));
@@ -65,7 +65,11 @@ public class TrendingContentController implements Initializable {
 
     @FXML
     private void handleBack(ActionEvent event) {
-        SceneSwitcher.switchScene(event,"/csc213/ottplatfrom/rajmee/ManagePromotion.fxml","Marketing Dashboard");
+        SceneSwitcher.switchScene(
+                event,
+                "/csc213/ottplatfrom/rajmee/ContentManagerDashboard.fxml",
+                "Content Manager Dashboard"
+        );
     }
 
     /** Simple row holder for the trending table (not part of DataStore). */
