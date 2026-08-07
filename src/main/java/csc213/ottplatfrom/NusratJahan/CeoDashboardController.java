@@ -26,115 +26,21 @@ import java.util.List;
 public class CeoDashboardController {
 
     @FXML
-    private Label welcomeLabel;
-
-    // Goal 1 - dashboard
-    @FXML
-    private ComboBox<String> periodCombo;
-    @FXML
     private Label totalSubscribersLabel;
-    @FXML
-    private Label newSubscribersLabel;
-    @FXML
-    private Label revenueLabel;
-    @FXML
-    private Label activeContentLabel;
-
-    // Goal 2 - manage users
-    @FXML
-    private TableView<Subscriber> usersTable;
-    @FXML
-    private TableColumn<Subscriber, String> colUserId;
-    @FXML
-    private TableColumn<Subscriber, String> colUserName;
-    @FXML
-    private TableColumn<Subscriber, String> colUserEmail;
-    @FXML
-    private TableColumn<Subscriber, String> colUserStatus;
-    @FXML
-    private Label usersStatusLabel;
-
-    // Goal 3 - featured content
-    @FXML
-    private TableView<ContentItem> featuredTable;
-    @FXML
-    private TableColumn<ContentItem, String> colFeatId;
-    @FXML
-    private TableColumn<ContentItem, String> colFeatTitle;
-    @FXML
-    private TableColumn<ContentItem, String> colFeatStatus;
-    @FXML
-    private Label featuredStatusLabel;
-
-    // Goal 4 - content list
-    @FXML
-    private TableView<ContentItem> contentListTable;
-    @FXML
-    private TableColumn<ContentItem, String> colListId;
-    @FXML
-    private TableColumn<ContentItem, String> colListTitle;
-    @FXML
-    private TableColumn<ContentItem, String> colListType;
-    @FXML
-    private TableColumn<ContentItem, String> colListGenre;
-    @FXML
-    private TableColumn<ContentItem, Integer> colListYear;
-    @FXML
-    private TableColumn<ContentItem, String> colListStatus;
-
-    // Goal 5 - subscription plans
-    @FXML
-    private TableView<Plan> plansTable;
-    @FXML
-    private TableColumn<Plan, String> colPlanName;
-    @FXML
-    private TableColumn<Plan, Double> colPlanPrice;
-    @FXML
-    private TextField newPriceField;
-    @FXML
-    private Label planStatusLabel;
-
-    // Goal 6 - feedback
-    @FXML
-    private TableView<Feedback> feedbackTable;
-    @FXML
-    private TableColumn<Feedback, String> colFbId;
-    @FXML
-    private TableColumn<Feedback, String> colFbSubscriber;
-    @FXML
-    private TableColumn<Feedback, Integer> colFbRating;
-    @FXML
-    private TableColumn<Feedback, String> colFbComment;
-
-    // Goal 7 - subscriber details
-    @FXML
-    private TextField subSearchField;
-    @FXML
-    private Label subSearchStatusLabel;
-    @FXML
-    private Label subNameLabel;
-    @FXML
-    private Label subEmailLabel;
-    @FXML
-    private Label subStatusLabel;
-    @FXML
-    private Label subJoinDateLabel;
-
-    // Goal 8 - announcements
-    @FXML
-    private TextField annTitleField;
-    @FXML
-    private TextArea annBodyArea;
-    @FXML
-    private ListView<String> annListView;
-    @FXML
-    private Label annStatusLabel;
 
     private ObservableList<Subscriber> subscribers;
     private ObservableList<ContentItem> content;
     private ObservableList<Plan> plans;
     private List<Announcement> announcements;
     private String editingAnnouncementId;
+    @FXML
+    private Label totalContentLabel;
+    @FXML
+    private Label totalRevenueLabel;
+    @FXML
+    private Label pendingPaymentsLabel;
+    @FXML
+    private ComboBox periodBox;
 
     @FXML
     private void initialize() {
@@ -200,7 +106,7 @@ public class CeoDashboardController {
         annListView.setItems(FXCollections.observableArrayList(titles));
     }
 
-    @FXML
+    @Deprecated
     private void handleSignOut(ActionEvent event) throws IOException {
         DataStore.setCurrentUser(null);
         csc213.ottplatfrom.SceneSwitcher.switchTo(event, "login.fxml", "OTT Platform - Sign In");
@@ -449,5 +355,33 @@ public class CeoDashboardController {
         annTitleField.setText(selected.getTitle());
         annBodyArea.setText(selected.getBody());
         annStatusLabel.setText("");
+    }
+
+    @FXML
+    public void goCustomerFeedback(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void goAnnouncements(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void goSubscriberDetails(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void goSubscriptionPlans(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void goFeaturedContent(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void goContentList(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void goManageUsers(ActionEvent actionEvent) {
     }
 }
