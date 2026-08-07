@@ -1,25 +1,23 @@
 package csc213.ottplatfrom.NusratJahan;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 
-public class SubscriptionPlansController
+public class RefundRequestsController
 {
     @javafx.fxml.FXML
-    private TableColumn colPlanName;
+    private TableColumn colReason;
     @javafx.fxml.FXML
-    private TableColumn colPlanId;
+    private TableColumn colAmount;
     @javafx.fxml.FXML
-    private TableColumn colPrice;
+    private TableView refundTable;
     @javafx.fxml.FXML
-    private TextField newPriceField;
+    private TableColumn colSubscriberName;
     @javafx.fxml.FXML
-    private TableView planTable;
+    private TableColumn colRequestId;
     @javafx.fxml.FXML
-    private Label statusLabel;
+    private TableColumn colStatus;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -27,9 +25,5 @@ public class SubscriptionPlansController
 
     @javafx.fxml.FXML
     public void handleBack(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void handleUpdate(ActionEvent actionEvent) {
     }
 }

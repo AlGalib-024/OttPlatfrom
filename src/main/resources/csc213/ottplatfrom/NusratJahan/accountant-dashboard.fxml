@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.NusratJahan.AccountantDashboardController">
+
+<top>
+        <Label text="Accountant Dashboard" style="-fx-font-size: 22px; -fx-font-weight: bold;">
+            <BorderPane.margin><Insets top="15" left="15" bottom="5"/></BorderPane.margin>
+        </Label>
+    </top>
+    <left>
+        <VBox spacing="8" prefWidth="220">
+            <padding><Insets top="10" left="15" right="10"/></padding>
+            <Button text="Payment Records" maxWidth="Infinity" onAction="#goPaymentRecords"/>
+            <Button text="Verify Payment" maxWidth="Infinity" onAction="#goVerifyPayment"/>
+            <Button text="Record Offline Payment" maxWidth="Infinity" onAction="#goRecordOfflinePayment"/>
+            <Button text="Refund Requests" maxWidth="Infinity" onAction="#goRefundRequests"/>
+            <Button text="Search Payment" maxWidth="Infinity" onAction="#goSearchPayment"/>
+            <Button text="Record Subscription Payment" maxWidth="Infinity" onAction="#goRecordPayment"/>
+            <Button text="Subscriber Payments" maxWidth="Infinity" onAction="#goSubscriberPayments"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10" alignment="TOP_LEFT">
+            <padding><Insets top="20" left="20"/></padding>
+            <Label text="Select an option from the left menu." style="-fx-font-size: 14px; -fx-text-fill: gray;"/>
+        </VBox>
+    </center>
+</BorderPane>

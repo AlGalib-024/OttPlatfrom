@@ -2,27 +2,31 @@ package csc213.ottplatfrom.NusratJahan;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class SubscriptionPlansController
+public class SearchPaymentController
 {
     @javafx.fxml.FXML
-    private TableColumn colPlanName;
+    private Label dateLabel;
     @javafx.fxml.FXML
-    private TableColumn colPlanId;
+    private Label amountLabel;
     @javafx.fxml.FXML
-    private TableColumn colPrice;
+    private Label statusValueLabel;
     @javafx.fxml.FXML
-    private TextField newPriceField;
+    private Label methodLabel;
     @javafx.fxml.FXML
-    private TableView planTable;
+    private TextField paymentIdField;
     @javafx.fxml.FXML
-    private Label statusLabel;
+    private Label messageLabel;
+    @javafx.fxml.FXML
+    private Label nameLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void handleSearch(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -30,6 +34,6 @@ public class SubscriptionPlansController
     }
 
     @javafx.fxml.FXML
-    public void handleUpdate(ActionEvent actionEvent) {
+    public void handleClear(ActionEvent actionEvent) {
     }
 }

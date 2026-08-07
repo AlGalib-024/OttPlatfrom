@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.NusratJahan.VerifyPaymentController">
+
+<top>
+        <Label text="Verify Payment" style="-fx-font-size: 20px; -fx-font-weight: bold;">
+            <BorderPane.margin><Insets top="15" left="15" bottom="10"/></BorderPane.margin>
+        </Label>
+    </top>
+    <center>
+        <TableView fx:id="pendingTable">
+            <columns>
+                <TableColumn fx:id="colPaymentId" text="Payment ID" prefWidth="100"/>
+                <TableColumn fx:id="colSubscriberName" text="Subscriber Name" prefWidth="160"/>
+                <TableColumn fx:id="colAmount" text="Amount" prefWidth="90"/>
+                <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+                <TableColumn fx:id="colMethod" text="Method" prefWidth="130"/>
+            </columns>
+            <BorderPane.margin><Insets left="15" right="15"/></BorderPane.margin>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding><Insets top="10" bottom="15" right="15"/></padding>
+            <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+            <Button text="View Details" onAction="#handleViewDetails"/>
+            <Button text="Verify" onAction="#handleVerify"/>
+            <Button text="Back" onAction="#handleBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>

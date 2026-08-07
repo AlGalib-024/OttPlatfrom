@@ -4,22 +4,23 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 
-public class SubscriptionPlansController
+public class PaymentRecordsController
 {
     @javafx.fxml.FXML
-    private TableColumn colPlanName;
+    private TableColumn colAmount;
     @javafx.fxml.FXML
-    private TableColumn colPlanId;
+    private TableColumn colPaymentId;
     @javafx.fxml.FXML
-    private TableColumn colPrice;
+    private TableView paymentTable;
     @javafx.fxml.FXML
-    private TextField newPriceField;
+    private TableColumn colSubscriberName;
     @javafx.fxml.FXML
-    private TableView planTable;
+    private TableColumn colDate;
     @javafx.fxml.FXML
     private Label statusLabel;
+    @javafx.fxml.FXML
+    private TableColumn colStatus;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,6 +31,6 @@ public class SubscriptionPlansController
     }
 
     @javafx.fxml.FXML
-    public void handleUpdate(ActionEvent actionEvent) {
+    public void handleDelete(ActionEvent actionEvent) {
     }
 }

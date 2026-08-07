@@ -1,25 +1,22 @@
 package csc213.ottplatfrom.NusratJahan;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
-public class SubscriptionPlansController
+public class RecordOfflinePaymentController
 {
     @javafx.fxml.FXML
-    private TableColumn colPlanName;
+    private ComboBox methodBox;
     @javafx.fxml.FXML
-    private TableColumn colPlanId;
-    @javafx.fxml.FXML
-    private TableColumn colPrice;
-    @javafx.fxml.FXML
-    private TextField newPriceField;
-    @javafx.fxml.FXML
-    private TableView planTable;
+    private TextField dateField;
     @javafx.fxml.FXML
     private Label statusLabel;
+    @javafx.fxml.FXML
+    private TextField subscriberIdField;
+    @javafx.fxml.FXML
+    private TextField amountField;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,6 +27,10 @@ public class SubscriptionPlansController
     }
 
     @javafx.fxml.FXML
-    public void handleUpdate(ActionEvent actionEvent) {
+    public void handleClear(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleSave(ActionEvent actionEvent) {
     }
 }

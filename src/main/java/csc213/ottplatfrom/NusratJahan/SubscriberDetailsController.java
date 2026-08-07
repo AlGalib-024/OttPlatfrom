@@ -1,5 +1,9 @@
 package csc213.ottplatfrom.NusratJahan;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
 public class SubscriberDetailsController
 {
     @javafx.fxml.FXML
