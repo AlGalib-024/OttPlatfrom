@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="csc213.ottplatfrom.NusratJahan.AnnouncementsController">
+
+
+      spacing="12">
+    <padding><Insets top="15" left="20" right="20" bottom="15"/></padding>
+
+    <Label text="Manage Announcements" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <Label text="Title:"/>
+    <TextField fx:id="titleField" maxWidth="400"/>
+
+    <Label text="Announcement:"/>
+    <TextArea fx:id="announcementArea" prefRowCount="6" maxWidth="500"/>
+
+    <HBox spacing="10">
+        <Button text="Save" onAction="#handleSave"/>
+        <Button text="Update" onAction="#handleUpdate"/>
+        <Button text="Clear" onAction="#handleClear"/>
+        <Button text="Back" onAction="#handleBack"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+</VBox>

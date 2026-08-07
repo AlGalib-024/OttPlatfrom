@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.NusratJahan.SubscriberDetailsController">
+    <top>
+        <VBox spacing="10">
+            <padding><Insets top="15" left="15" right="15" bottom="10"/></padding>
+            <Label text="Subscriber Details" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Subscriber ID:"/>
+                <TextField fx:id="subscriberIdField" prefWidth="150"/>
+                <Button text="Search" onAction="#handleSearch"/>
+                <Button text="Clear" onAction="#handleClear"/>
+                <Button text="Back" onAction="#handleBack"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <GridPane hgap="15" vgap="12">
+            <padding><Insets top="10" left="20" right="20"/></padding>
+            <Label text="Name:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="nameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Email:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="emailLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Phone:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="phoneLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Country:" style="-fx-font-weight: bold;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <Label fx:id="countryLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label text="Plan:" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Label fx:id="planLabel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <Label text="Expiry Date:" style="-fx-font-weight: bold;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <Label fx:id="expiryLabel" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        </GridPane>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" style="-fx-text-fill: red;">
+            <BorderPane.margin><Insets left="20" bottom="15"/></BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>
