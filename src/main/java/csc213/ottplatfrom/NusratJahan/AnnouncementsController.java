@@ -1,5 +1,10 @@
 package csc213.ottplatfrom.NusratJahan;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
 public class AnnouncementsController
 {
     @javafx.fxml.FXML
