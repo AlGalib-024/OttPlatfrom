@@ -49,6 +49,8 @@ public class LoginController
                     SceneSwitcher.switchScene(actionEvent,"/csc213/ottplatfrom/rajmee/MarketingDashboard.fxml", "Marketing Manager Dashboard");
             case "Content Manager" ->
                     SceneSwitcher.switchScene(actionEvent,"/csc213/ottplatfrom/rajmee/ContentManagerDashboard.fxml", "Content Manager Dashboard");
+            case "Subscriber" ->
+                    SceneSwitcher.switchScene(actionEvent,"/csc213/ottplatfrom/Munshi/subscriberDashboard.fxml","Subscriber");
             default ->
                     errorLabel.setText("Dashboard for '" + role + "' is not wired up yet in this build.");
         }

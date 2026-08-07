@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="csc213.ottplatfrom.Munshi.AdvertiserPaymentHistoryController">
+
+    <children>
+
+        <Label layoutX="300.0"
+               layoutY="20.0"
+               text="Payment History"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="40.0"
+               layoutY="80.0"
+               text="Payment Method"/>
+
+        <ComboBox fx:id="paymentMethodComboBox"
+                  layoutX="180.0"
+                  layoutY="75.0"
+                  prefWidth="200"/>
+
+        <Label layoutX="430.0"
+               layoutY="80.0"
+               text="Status"/>
+
+        <ComboBox fx:id="statusComboBox"
+                  layoutX="520.0"
+                  layoutY="75.0"
+                  prefWidth="180"/>
+
+        <Label layoutX="40.0"
+               layoutY="130.0"
+               text="From Date"/>
+
+        <DatePicker fx:id="fromDatePicker"
+                    layoutX="180.0"
+                    layoutY="125.0"/>
+
+        <Label layoutX="430.0"
+               layoutY="130.0"
+               text="To Date"/>
+
+        <DatePicker fx:id="toDatePicker"
+                    layoutX="520.0"
+                    layoutY="125.0"/>
+
+        <TableView fx:id="paymentTableView"
+                   layoutX="40.0"
+                   layoutY="200.0"
+                   prefHeight="300.0"
+                   prefWidth="820.0">
+
+            <columns>
+
+                <TableColumn fx:id="paymentIdColumn"
+                             text="Payment ID"
+                             prefWidth="120"/>
+
+                <TableColumn fx:id="dateColumn"
+                             text="Date"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="methodColumn"
+                             text="Method"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="amountColumn"
+                             text="Amount"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="statusColumn"
+                             text="Status"
+                             prefWidth="200"/>
+
+            </columns>
+
+        </TableView>
+
+        <Button layoutX="220.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Search"
+                onAction="#searchOnClick"/>
+
+        <Button layoutX="390.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Clear"
+                onAction="#clearOnClick"/>
+
+        <Button layoutX="560.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Back"
+                onAction="#backOnClick"/>
+
+    </children>
+
+</AnchorPane>

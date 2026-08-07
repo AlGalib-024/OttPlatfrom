@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="csc213.ottplatfrom.Munshi.EditAdvertisementController">
+
+    <children>
+
+        <Label layoutX="315.0"
+               layoutY="20.0"
+               text="Edit Advertisement"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="40.0" layoutY="80.0" text="Advertisement ID"/>
+
+        <TextField fx:id="advertisementIdTextField"
+                   layoutX="180.0"
+                   layoutY="75.0"
+                   prefWidth="220"/>
+
+        <Label layoutX="40.0" layoutY="130.0" text="Advertisement Title"/>
+
+        <TextField fx:id="advertisementTitleTextField"
+                   layoutX="180.0"
+                   layoutY="125.0"
+                   prefWidth="220"/>
+
+        <Label layoutX="40.0" layoutY="180.0" text="Category"/>
+
+        <ComboBox fx:id="categoryComboBox"
+                  layoutX="180.0"
+                  layoutY="175.0"
+                  prefWidth="220"/>
+
+        <Label layoutX="40.0" layoutY="230.0" text="Target Audience"/>
+
+        <ComboBox fx:id="targetAudienceComboBox"
+                  layoutX="180.0"
+                  layoutY="225.0"
+                  prefWidth="220"/>
+
+        <Label layoutX="480.0" layoutY="80.0" text="Budget"/>
+
+        <TextField fx:id="budgetTextField"
+                   layoutX="600.0"
+                   layoutY="75.0"
+                   prefWidth="180"/>
+
+        <Label layoutX="480.0" layoutY="130.0" text="Start Date"/>
+
+        <DatePicker fx:id="startDatePicker"
+                    layoutX="600.0"
+                    layoutY="125.0"/>
+
+        <Label layoutX="480.0" layoutY="180.0" text="End Date"/>
+
+        <DatePicker fx:id="endDatePicker"
+                    layoutX="600.0"
+                    layoutY="175.0"/>
+
+        <CheckBox fx:id="activeCheckBox"
+                  layoutX="600.0"
+                  layoutY="225.0"
+                  text="Advertisement Active"/>
+
+        <TableView fx:id="advertisementTableView"
+                   layoutX="40.0"
+                   layoutY="300.0"
+                   prefHeight="220.0"
+                   prefWidth="820.0">
+
+            <columns>
+
+                <TableColumn fx:id="idColumn"
+                             text="ID"
+                             prefWidth="100"/>
+
+                <TableColumn fx:id="titleColumn"
+                             text="Title"
+                             prefWidth="200"/>
+
+                <TableColumn fx:id="categoryColumn"
+                             text="Category"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="budgetColumn"
+                             text="Budget"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="statusColumn"
+                             text="Status"
+                             prefWidth="180"/>
+
+            </columns>
+
+        </TableView>
+
+        <Button layoutX="190.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Update"
+                onAction="#updateOnClick"/>
+
+        <Button layoutX="370.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Clear"
+                onAction="#clearOnClick"/>
+
+        <Button layoutX="550.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Back"
+                onAction="#backOnClick"/>
+
+    </children>
+
+</AnchorPane>
