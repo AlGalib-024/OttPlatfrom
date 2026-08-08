@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.NusratJahan.FeaturedContentController">
+    <top>
+        <Label text="Manage Featured Content" style="-fx-font-size: 20px; -fx-font-weight: bold;">
+            <BorderPane.margin><Insets top="15" left="15" bottom="10"/></BorderPane.margin>
+        </Label>
+    </top>
+    <center>
+        <TableView fx:id="contentTable">
+            <columns>
+                <TableColumn fx:id="colContentId" text="Content ID" prefWidth="100"/>
+                <TableColumn fx:id="colTitle" text="Title" prefWidth="220"/>
+                <TableColumn fx:id="colFeaturedStatus" text="Featured Status" prefWidth="150"/>
+            </columns>
+            <BorderPane.margin><Insets left="15" right="15"/></BorderPane.margin>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <padding><Insets top="10" bottom="15" right="15"/></padding>
+            <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+            <Button text="Mark Featured" onAction="#handleMarkFeatured"/>
+            <Button text="Remove Featured" onAction="#handleRemoveFeatured"/>
+            <Button text="Back" onAction="#handleBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>
