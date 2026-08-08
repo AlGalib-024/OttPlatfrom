@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.Rajmee.ContentAnalyticsController"
+            prefHeight="500.0"
+            prefWidth="700.0">
+
+    <children>
+
+        <Text layoutX="250.0"
+              layoutY="30.0"
+              text="Content Analytics"
+              style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="30.0"
+               layoutY="80.0"
+               text="Select Content:"/>
+
+        <ComboBox fx:id="contentComboBox"
+                  layoutX="170.0"
+                  layoutY="75.0"
+                  prefWidth="220.0"/>
+
+        <Label layoutX="30.0"
+               layoutY="130.0"
+               text="From:"/>
+
+        <DatePicker fx:id="startDatePicker"
+                    layoutX="170.0"
+                    layoutY="125.0"/>
+
+        <Label layoutX="30.0"
+               layoutY="180.0"
+               text="To:"/>
+
+        <DatePicker fx:id="endDatePicker"
+                    layoutX="170.0"
+                    layoutY="175.0"/>
+
+        <Button text="Generate Report"
+                layoutX="170.0"
+                layoutY="230.0"
+                onAction="#handleGenerateReport"/>
+
+        <Text fx:id="reportText"
+              layoutX="30.0"
+              layoutY="300.0"
+              wrappingWidth="630.0"/>
+
+        <Button text="Back"
+                layoutX="30.0"
+                layoutY="440.0"
+                onAction="#handleBack"/>
+
+    </children>
+
+</AnchorPane>
