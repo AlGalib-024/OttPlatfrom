@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="csc213.ottplatfrom.Munshi.UpdateProfileController">
+
+    <children>
+
+        <Label layoutX="330.0"
+               layoutY="20.0"
+               text="Update Profile"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="40.0" layoutY="80.0" text="Advertiser ID"/>
+
+        <TextField fx:id="advertiserIdTextField"
+                   layoutX="180.0"
+                   layoutY="75.0"
+                   prefWidth="220"/>
+
+        <Label layoutX="40.0" layoutY="130.0" text="Company Name"/>
+
+        <TextField fx:id="companyNameTextField"
+                   layoutX="180.0"
+                   layoutY="125.0"
+                   prefWidth="220"/>
+
+        <Label layoutX="40.0" layoutY="180.0" text="Contact Person"/>
+
+        <TextField fx:id="contactPersonTextField"
+                   layoutX="180.0"
+                   layoutY="175.0"
+                   prefWidth="220"/>
+
+        <Label layoutX="40.0" layoutY="230.0" text="Email"/>
+
+        <TextField fx:id="emailTextField"
+                   layoutX="180.0"
+                   layoutY="225.0"
+                   prefWidth="220"/>
+
+        <Label layoutX="480.0" layoutY="80.0" text="Phone"/>
+
+        <TextField fx:id="phoneTextField"
+                   layoutX="600.0"
+                   layoutY="75.0"
+                   prefWidth="220"/>
+
+        <Label layoutX="480.0" layoutY="130.0" text="Country"/>
+
+        <ComboBox fx:id="countryComboBox"
+                  layoutX="600.0"
+                  layoutY="125.0"
+                  prefWidth="220"/>
+
+        <Label layoutX="480.0" layoutY="180.0" text="Address"/>
+
+        <TextField fx:id="addressTextField"
+                   layoutX="600.0"
+                   layoutY="175.0"
+                   prefWidth="220"/>
+
+        <CheckBox fx:id="activeCheckBox"
+                  layoutX="600.0"
+                  layoutY="230.0"
+                  text="Company Active"/>
+
+        <Button layoutX="220.0"
+                layoutY="340.0"
+                prefWidth="140"
+                text="Update Profile"
+                onAction="#updateProfileOnClick"/>
+
+        <Button layoutX="400.0"
+                layoutY="340.0"
+                prefWidth="120"
+                text="Clear"
+                onAction="#clearOnClick"/>
+
+        <Button layoutX="560.0"
+                layoutY="340.0"
+                prefWidth="120"
+                text="Back"
+                onAction="#backOnClick"/>
+
+    </children>
+
+</AnchorPane>

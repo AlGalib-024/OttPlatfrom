@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.rajmee.CampaignPerformanceController"
+            prefHeight="500.0"
+            prefWidth="700.0">
+
+    <children>
+
+        <Text layoutX="210.0"
+              layoutY="30.0"
+              text="Campaign Performance Report"
+              style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="30.0"
+               layoutY="60.0"
+               text="Select a campaign, then click Analyze:"/>
+
+        <TableView fx:id="campaignTable"
+                   layoutX="30.0"
+                   layoutY="85.0"
+                   prefWidth="640.0"
+                   prefHeight="180.0">
+
+            <columns>
+
+                <TableColumn fx:id="idColumn"
+                             text="ID"
+                             prefWidth="80.0"/>
+
+                <TableColumn fx:id="nameColumn"
+                             text="Campaign Name"
+                             prefWidth="320.0"/>
+
+                <TableColumn fx:id="statusColumn"
+                             text="Status"
+                             prefWidth="180.0"/>
+
+            </columns>
+
+        </TableView>
+
+        <Button text="Analyze"
+                layoutX="30.0"
+                layoutY="285.0"
+                onAction="#handleAnalyze"/>
+
+        <Label layoutX="30.0"
+               layoutY="340.0"
+               text="Engagement:"/>
+
+        <Label fx:id="engagementLabel"
+               layoutX="150.0"
+               layoutY="340.0"/>
+
+        <Label layoutX="30.0"
+               layoutY="380.0"
+               text="Conversion:"/>
+
+        <Label fx:id="conversionLabel"
+               layoutX="150.0"
+               layoutY="380.0"/>
+
+        <Button text="Back"
+                layoutX="30.0"
+                layoutY="430.0"
+                onAction="#handleBack"/>
+
+    </children>
+
+</AnchorPane>

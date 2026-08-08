@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="csc213.ottplatfrom.Munshi.SubscriberUpdateProfileController">
+
+    <children>
+
+        <Label layoutX="330.0"
+               layoutY="20.0"
+               text="Update Profile"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="60.0" layoutY="80.0" text="First Name"/>
+        <TextField fx:id="firstNameTextField"
+                   layoutX="220.0"
+                   layoutY="75.0"
+                   prefWidth="220.0"/>
+
+        <Label layoutX="60.0" layoutY="130.0" text="Last Name"/>
+        <TextField fx:id="lastNameTextField"
+                   layoutX="220.0"
+                   layoutY="125.0"
+                   prefWidth="220.0"/>
+
+        <Label layoutX="60.0" layoutY="180.0" text="Email"/>
+        <TextField fx:id="emailTextField"
+                   layoutX="220.0"
+                   layoutY="175.0"
+                   prefWidth="250.0"/>
+
+        <Label layoutX="60.0" layoutY="230.0" text="Phone"/>
+        <TextField fx:id="phoneTextField"
+                   layoutX="220.0"
+                   layoutY="225.0"
+                   prefWidth="220.0"/>
+
+        <Label layoutX="60.0" layoutY="280.0" text="Gender"/>
+        <ComboBox fx:id="genderComboBox"
+                  layoutX="220.0"
+                  layoutY="275.0"
+                  prefWidth="180.0"/>
+
+        <Label layoutX="60.0" layoutY="330.0" text="Date of Birth"/>
+        <DatePicker fx:id="dobDatePicker"
+                    layoutX="220.0"
+                    layoutY="325.0"/>
+
+        <Label layoutX="60.0" layoutY="380.0" text="Country"/>
+        <ComboBox fx:id="countryComboBox"
+                  layoutX="220.0"
+                  layoutY="375.0"
+                  prefWidth="220.0"/>
+
+        <Label layoutX="60.0" layoutY="430.0" text="Address"/>
+        <TextField fx:id="addressTextField"
+                   layoutX="220.0"
+                   layoutY="425.0"
+                   prefWidth="350.0"/>
+
+        <CheckBox fx:id="newsletterCheckBox"
+                  layoutX="220.0"
+                  layoutY="480.0"
+                  text="Receive Promotional Emails"/>
+
+        <Button layoutX="220.0"
+                layoutY="560.0"
+                prefWidth="120.0"
+                text="Update"
+                onAction="#updateOnClick"/>
+
+        <Button layoutX="370.0"
+                layoutY="560.0"
+                prefWidth="120.0"
+                text="Clear"
+                onAction="#clearOnClick"/>
+
+        <Button layoutX="520.0"
+                layoutY="560.0"
+                prefWidth="120.0"
+                text="Back"
+                onAction="#backOnClick"/>
+
+    </children>
+
+</AnchorPane>

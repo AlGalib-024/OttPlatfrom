@@ -1,15 +1,28 @@
 package csc213.ottplatfrom.rajmee;
 
+/**
+ * Content *-- Subtitle (composition in the UML diagram: a subtitle cannot
+ * exist without its parent content).
+ */
 public class Subtitle {
-    private int subtitleId;
-    private String fileName;
-    private String format;
 
-    public boolean validateFormat(String fileName) {
-        return true;
+    private final int subtitleId;
+    private final String language;
+    private final String format;   // SRT / VTT
+    private final String fileName;
+
+    public Subtitle(int subtitleId, String language, String format, String fileName) {
+        this.subtitleId = subtitleId;
+        this.language = language;
+        this.format = format;
+        this.fileName = fileName;
     }
 
-    public boolean uploadSubtitle(int contentId) {
-        return true;
-    }
+    public int getSubtitleId() { return subtitleId; }
+    public String getLanguage() { return language; }
+    public String getFormat() { return format; }
+    public String getFileName() { return fileName; }
+
+    @Override
+    public String toString() { return language + " (" + format + ")"; }
 }

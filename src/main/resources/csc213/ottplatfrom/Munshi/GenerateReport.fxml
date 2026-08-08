@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="csc213.ottplatfrom.Munshi.GenerateReportController">
+
+    <children>
+
+        <Label layoutX="330.0"
+               layoutY="20.0"
+               text="Generate Report"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="40.0"
+               layoutY="80.0"
+               text="Report Type"/>
+
+        <ComboBox fx:id="reportTypeComboBox"
+                  layoutX="170.0"
+                  layoutY="75.0"
+                  prefWidth="220"/>
+
+        <Label layoutX="450.0"
+               layoutY="80.0"
+               text="Advertisement"/>
+
+        <ComboBox fx:id="advertisementComboBox"
+                  layoutX="580.0"
+                  layoutY="75.0"
+                  prefWidth="220"/>
+
+        <Label layoutX="40.0"
+               layoutY="130.0"
+               text="From Date"/>
+
+        <DatePicker fx:id="fromDatePicker"
+                    layoutX="170.0"
+                    layoutY="125.0"/>
+
+        <Label layoutX="450.0"
+               layoutY="130.0"
+               text="To Date"/>
+
+        <DatePicker fx:id="toDatePicker"
+                    layoutX="580.0"
+                    layoutY="125.0"/>
+
+        <TableView fx:id="reportTableView"
+                   layoutX="40.0"
+                   layoutY="210.0"
+                   prefHeight="300.0"
+                   prefWidth="820.0">
+
+            <columns>
+
+                <TableColumn fx:id="idColumn"
+                             text="Ad ID"
+                             prefWidth="100"/>
+
+                <TableColumn fx:id="titleColumn"
+                             text="Advertisement"
+                             prefWidth="220"/>
+
+                <TableColumn fx:id="categoryColumn"
+                             text="Category"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="budgetColumn"
+                             text="Budget"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="statusColumn"
+                             text="Status"
+                             prefWidth="180"/>
+
+            </columns>
+
+        </TableView>
+
+        <Button layoutX="210.0"
+                layoutY="560.0"
+                prefWidth="140"
+                text="Generate Report"
+                onAction="#generateReportOnClick"/>
+
+        <Button layoutX="390.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Clear"
+                onAction="#clearOnClick"/>
+
+        <Button layoutX="550.0"
+                layoutY="560.0"
+                prefWidth="120"
+                text="Back"
+                onAction="#backOnClick"/>
+
+    </children>
+
+</AnchorPane>

@@ -1,32 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc213.ottplatfrom.NusratJahan.AccountantDashboardController">
+            fx:controller="csc213.ottplatfrom.NusratJahan.AccountantDashboardController"
+            prefWidth="900.0" prefHeight="600.0">
 
-<top>
-        <Label text="Accountant Dashboard" style="-fx-font-size: 22px; -fx-font-weight: bold;">
-            <BorderPane.margin><Insets top="15" left="15" bottom="5"/></BorderPane.margin>
-        </Label>
+    <top>
+        <HBox spacing="12.0" alignment="CENTER_LEFT">
+            <padding><Insets top="10.0" bottom="10.0" left="14.0" right="14.0"/></padding>
+            <Label text="OTT Platform - Accountant Dashboard" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label fx:id="welcomeLabel" HBox.hgrow="ALWAYS"/>
+            <Button text="Sign Out" onAction="#handleSignOut"/>
+        </HBox>
     </top>
-    <left>
-        <VBox spacing="8" prefWidth="220">
-            <padding><Insets top="10" left="15" right="10"/></padding>
-            <Button text="Payment Records" maxWidth="Infinity" onAction="#goPaymentRecords"/>
-            <Button text="Verify Payment" maxWidth="Infinity" onAction="#goVerifyPayment"/>
-            <Button text="Record Offline Payment" maxWidth="Infinity" onAction="#goRecordOfflinePayment"/>
-            <Button text="Refund Requests" maxWidth="Infinity" onAction="#goRefundRequests"/>
-            <Button text="Search Payment" maxWidth="Infinity" onAction="#goSearchPayment"/>
-            <Button text="Record Subscription Payment" maxWidth="Infinity" onAction="#goRecordPayment"/>
-            <Button text="Subscriber Payments" maxWidth="Infinity" onAction="#goSubscriberPayments"/>
-        </VBox>
-    </left>
+
     <center>
-        <VBox spacing="10" alignment="TOP_LEFT">
-            <padding><Insets top="20" left="20"/></padding>
-            <Label text="Select an option from the left menu." style="-fx-font-size: 14px; -fx-text-fill: gray;"/>
-        </VBox>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+
+            <!-- Goal 1: View payment records -->
+            <Tab text="Payment Records">
+                <VBox spacing="8.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Payment Records"/>
+                    <TableView fx:id="paymentsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colPayId" text="Payment ID" prefWidth="90"/>
+                            <TableColumn fx:id="colPaySubscriber" text="Subscriber" prefWidth="150"/>
+                            <TableColumn fx:id="colPayAmount" text="Amount" prefWidth="90"/>
+                            <TableColumn fx:id="colPayDate" text="Date" prefWidth="100"/>
+                            <TableColumn fx:id="colPayStatus" text="Status" prefWidth="90"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Goal 2: Verify payment -->
+            <Tab text="Verify Payment">
+                <VBox spacing="8.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Pending Payments"/>
+                    <TableView fx:id="pendingPaymentsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colPendId" text="Payment ID" prefWidth="90"/>
+                            <TableColumn fx:id="colPendSubscriber" text="Subscriber" prefWidth="150"/>
+                            <TableColumn fx:id="colPendAmount" text="Amount" prefWidth="90"/>
+                            <TableColumn fx:id="colPendDate" text="Date" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                    <Button text="Verify" onAction="#handleVerifyPayment"/>
+                    <Label fx:id="verifyStatusLabel"/>
+                </VBox>
+            </Tab>
+
+            <!-- Goal 3: Record offline payment -->
+            <Tab text="Record Offline Payment">
+                <VBox spacing="6.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Record Offline Payment"/>
+                    <Label text="Subscriber ID:"/>
+                    <TextField fx:id="offlineSubIdField"/>
+                    <Label text="Amount:"/>
+                    <TextField fx:id="offlineAmountField"/>
+                    <Label text="Payment Date (YYYY-MM-DD):"/>
+                    <TextField fx:id="offlineDateField"/>
+                    <Label text="Payment Method:"/>
+                    <ComboBox fx:id="offlineMethodCombo"/>
+                    <HBox spacing="8.0">
+                        <Button text="Save" onAction="#handleRecordOfflinePayment"/>
+                        <Button text="Clear" onAction="#handleClearOfflinePayment"/>
+                    </HBox>
+                    <Label fx:id="offlineStatusLabel"/>
+                </VBox>
+            </Tab>
+
+            <!-- Goal 4: View refund requests -->
+            <Tab text="Refund Requests">
+                <VBox spacing="8.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Refund Requests"/>
+                    <TableView fx:id="refundsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colRefId" text="Request ID" prefWidth="90"/>
+                            <TableColumn fx:id="colRefSubscriber" text="Subscriber" prefWidth="150"/>
+                            <TableColumn fx:id="colRefAmount" text="Amount" prefWidth="90"/>
+                            <TableColumn fx:id="colRefReason" text="Reason" prefWidth="220"/>
+                            <TableColumn fx:id="colRefStatus" text="Status" prefWidth="90"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Goal 5: Search payment record -->
+            <Tab text="Search Payment">
+                <VBox spacing="8.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Search Payment"/>
+                    <HBox spacing="8.0" alignment="CENTER_LEFT">
+                        <Label text="Payment ID:"/>
+                        <TextField fx:id="searchPayIdField" prefWidth="140"/>
+                        <Button text="Search" onAction="#handleSearchPayment"/>
+                        <Button text="Clear" onAction="#handleClearPaymentSearch"/>
+                    </HBox>
+                    <Label fx:id="searchPayMessageLabel"/>
+                    <Label fx:id="searchResSubscriber"/>
+                    <Label fx:id="searchResAmount"/>
+                    <Label fx:id="searchResDate"/>
+                    <Label fx:id="searchResMethod"/>
+                    <Label fx:id="searchResStatus"/>
+                </VBox>
+            </Tab>
+
+            <!-- Goal 6: Record subscription payment -->
+            <Tab text="Record Subscription Payment">
+                <VBox spacing="6.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Record Subscription Payment"/>
+                    <Label text="Subscriber ID:"/>
+                    <TextField fx:id="subPaySubIdField"/>
+                    <Label text="Amount:"/>
+                    <TextField fx:id="subPayAmountField"/>
+                    <Label text="Payment Method:"/>
+                    <ComboBox fx:id="subPayMethodCombo"/>
+                    <HBox spacing="8.0">
+                        <Button text="Save" onAction="#handleRecordSubscriptionPayment"/>
+                        <Button text="Clear" onAction="#handleClearSubscriptionPayment"/>
+                    </HBox>
+                    <Label fx:id="subPayStatusLabel"/>
+                </VBox>
+            </Tab>
+
+            <!-- Goal 7: View subscriber payment history -->
+            <Tab text="Subscriber Payments">
+                <VBox spacing="8.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Subscriber Payment History"/>
+                    <HBox spacing="8.0" alignment="CENTER_LEFT">
+                        <Label text="Subscriber ID:"/>
+                        <TextField fx:id="historySubIdField" prefWidth="140"/>
+                        <Button text="Search" onAction="#handleSearchHistory"/>
+                    </HBox>
+                    <Label fx:id="historyStatusLabel"/>
+                    <TableView fx:id="historyTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colHistId" text="Payment ID" prefWidth="90"/>
+                            <TableColumn fx:id="colHistDate" text="Date" prefWidth="100"/>
+                            <TableColumn fx:id="colHistAmount" text="Amount" prefWidth="90"/>
+                            <TableColumn fx:id="colHistMethod" text="Method" prefWidth="110"/>
+                            <TableColumn fx:id="colHistStatus" text="Status" prefWidth="90"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Goal 8: Delete payment record -->
+            <Tab text="Delete Payment">
+                <VBox spacing="8.0">
+                    <padding><Insets top="14.0" bottom="14.0" left="14.0" right="14.0"/></padding>
+                    <Label text="Delete Payment Record"/>
+                    <TableView fx:id="deleteTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colDelId" text="Payment ID" prefWidth="90"/>
+                            <TableColumn fx:id="colDelSubscriber" text="Subscriber" prefWidth="150"/>
+                            <TableColumn fx:id="colDelAmount" text="Amount" prefWidth="90"/>
+                            <TableColumn fx:id="colDelDate" text="Date" prefWidth="100"/>
+                            <TableColumn fx:id="colDelStatus" text="Status" prefWidth="90"/>
+                        </columns>
+                    </TableView>
+                    <Button text="Delete" onAction="#handleDeletePayment"/>
+                    <Label fx:id="deleteStatusLabel"/>
+                </VBox>
+            </Tab>
+
+        </TabPane>
     </center>
 </BorderPane>

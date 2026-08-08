@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="csc213.ottplatfrom.Munshi.DeleteAdvertisementController">
+
+    <children>
+
+        <Label layoutX="320.0"
+               layoutY="20.0"
+               text="Delete Advertisement"
+               style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+
+        <Label layoutX="40.0"
+               layoutY="80.0"
+               text="Advertisement ID"/>
+
+        <TextField fx:id="advertisementIdTextField"
+                   layoutX="180.0"
+                   layoutY="75.0"
+                   prefWidth="220"/>
+
+        <CheckBox fx:id="confirmDeleteCheckBox"
+                  layoutX="450.0"
+                  layoutY="78.0"
+                  text="Confirm Delete"/>
+
+        <TableView fx:id="advertisementTableView"
+                   layoutX="40.0"
+                   layoutY="140.0"
+                   prefHeight="320.0"
+                   prefWidth="820.0">
+
+            <columns>
+
+                <TableColumn fx:id="idColumn"
+                             text="ID"
+                             prefWidth="100"/>
+
+                <TableColumn fx:id="titleColumn"
+                             text="Title"
+                             prefWidth="220"/>
+
+                <TableColumn fx:id="categoryColumn"
+                             text="Category"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="budgetColumn"
+                             text="Budget"
+                             prefWidth="150"/>
+
+                <TableColumn fx:id="statusColumn"
+                             text="Status"
+                             prefWidth="180"/>
+
+            </columns>
+
+        </TableView>
+
+        <Button layoutX="220.0"
+                layoutY="520.0"
+                prefWidth="120"
+                text="Delete"
+                onAction="#deleteOnClick"/>
+
+        <Button layoutX="390.0"
+                layoutY="520.0"
+                prefWidth="120"
+                text="Clear"
+                onAction="#clearOnClick"/>
+
+        <Button layoutX="560.0"
+                layoutY="520.0"
+                prefWidth="120"
+                text="Back"
+                onAction="#backOnClick"/>
+
+    </children>
+
+</AnchorPane>
