@@ -61,8 +61,6 @@ public class AddContentController {
             return;
         }
 
-        // এখানে পরে DataStore বা File I/O যোগ করতে পারবে
-
         messageLabel.setStyle("-fx-text-fill:green;");
         messageLabel.setText("Content saved successfully!");
 
