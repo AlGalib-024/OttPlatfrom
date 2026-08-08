@@ -1,9 +1,12 @@
 package csc213.ottplatfrom.NusratJahan;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class VerifyPaymentController
 {
@@ -22,9 +25,7 @@ public class VerifyPaymentController
     @javafx.fxml.FXML
     private Label statusLabel;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
+
 
     @javafx.fxml.FXML
     public void handleBack(ActionEvent actionEvent) {
@@ -36,5 +37,15 @@ public class VerifyPaymentController
 
     @javafx.fxml.FXML
     public void handleViewDetails(ActionEvent actionEvent) {
+    }
+    @FXML
+    public void initialize() {
+        colPaymentId.setCellValueFactory(new PropertyValueFactory<>("paymentId"));
+        colSubscriberName.setCellValueFactory(new PropertyValueFactory<>("subscriberName"));
+        colAmount.setCellValueFactory(new PropertyValueFactory<>("amountDisplay"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        colMethod.setCellValueFactory(new PropertyValueFactory<>("method"));
+
+        pendingTable.setItems(FXCollections.observableArrayList(DataStore.loadPendingPayments()));
     }
 }

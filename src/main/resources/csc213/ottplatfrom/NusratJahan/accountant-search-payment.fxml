@@ -3,12 +3,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+<BorderPane xmlns="http://javafx.com"
+            xmlns:fx="http://javafx.com"
             fx:controller="csc213.ottplatfrom.NusratJahan.SearchPaymentController">
+
+
 
 <top>
         <VBox spacing="10">
-            <padding><Insets top="15" left="15" right="15" bottom="10"/></padding>
+            <padding>
+                <Insets top="15" left="15" right="15" bottom="10"/>
+            </padding>
             <Label text="Search Payment" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <Label text="Payment ID:"/>
@@ -19,24 +24,34 @@
             </HBox>
         </VBox>
     </top>
+
     <center>
         <GridPane hgap="15" vgap="12">
-            <padding><Insets top="10" left="20" right="20"/></padding>
+            <padding>
+                <Insets top="10" left="20" right="20"/>
+            </padding>
             <Label text="Subscriber Name:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
             <Label fx:id="nameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
             <Label text="Amount:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
             <Label fx:id="amountLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
             <Label text="Date:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
             <Label fx:id="dateLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
             <Label text="Status:" style="-fx-font-weight: bold;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
             <Label fx:id="statusValueLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
             <Label text="Method:" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
             <Label fx:id="methodLabel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
         </GridPane>
     </center>
+
     <bottom>
         <Label fx:id="messageLabel" style="-fx-text-fill: red;">
-            <BorderPane.margin><Insets left="20" bottom="15"/></BorderPane.margin>
+            <BorderPane.margin>
+                <Insets left="20" bottom="15"/>
+            </BorderPane.margin>
         </Label>
     </bottom>
 </BorderPane>

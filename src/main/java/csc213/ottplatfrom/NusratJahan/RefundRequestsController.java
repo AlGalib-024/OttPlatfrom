@@ -1,8 +1,10 @@
 package csc213.ottplatfrom.NusratJahan;
 
-import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class RefundRequestsController
 {
@@ -19,11 +21,15 @@ public class RefundRequestsController
     @javafx.fxml.FXML
     private TableColumn colStatus;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
 
-    @javafx.fxml.FXML
-    public void handleBack(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
+        colRequestId.setCellValueFactory(new PropertyValueFactory<>("requestId"));
+        colSubscriberName.setCellValueFactory(new PropertyValueFactory<>("subscriberName"));
+        colAmount.setCellValueFactory(new PropertyValueFactory<>("amountDisplay"));
+        colReason.setCellValueFactory(new PropertyValueFactory<>("reason"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        refundTable.setItems(FXCollections.observableArrayList(DataStore.loadRefundRequests()));
     }
 }
