@@ -18,10 +18,10 @@ public class SendNotificationController  {
 
 
     public void initialize() {
-        typeComboBox.setItems(FXCollections.observableArrayList("Promotional", "Announcement", "Reminder"));
-        audienceComboBox.setItems(FXCollections.observableArrayList(
+        typeComboBox.getItems().addAll("Promotional", "Announcement", "Reminder");
+        audienceComboBox.getItems().addAll(
                 "All Subscribers", "Premium Subscribers", "Basic Subscribers", "New Users", "Inactive Users"
-        ));
+        );
     }
 
     @FXML

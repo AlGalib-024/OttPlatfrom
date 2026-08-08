@@ -5,11 +5,7 @@ import javafx.collections.ObservableList;
 
 import java.util.Optional;
 
-/**
- * Acts as the platform's "file system / database" for the simulation.
- * Every controller reads/writes to these same static lists so data
- * persists as you navigate between screens.
- */
+
 public class DataStore {
 
     public static final ObservableList<Content> contentList = FXCollections.observableArrayList();
@@ -72,12 +68,12 @@ public class DataStore {
         return match.orElse(null);
     }
 
-    /** Simple deterministic "view count" simulation, used by Trending Content / Analytics. */
+
     public static int simulatedViews(int id) {
         return (id * 137) % 5000 + 100;
     }
 
-    /** Simple deterministic rating simulation (1.0 - 5.0), used by Trending Content / Analytics. */
+
     public static double simulatedRating(int id) {
         return Math.round(((id * 37) % 41 / 10.0 + 1.0) * 10.0) / 10.0;
     }

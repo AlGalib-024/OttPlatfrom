@@ -1,9 +1,6 @@
 package csc213.ottplatfrom.Rajmee;
 
-/**
- * Series *-- Episode (composition in the UML diagram: an episode cannot
- * exist without its parent series).
- */
+
 public class Episode {
 
     private final int episodeId;

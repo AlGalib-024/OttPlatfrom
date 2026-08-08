@@ -1,8 +1,6 @@
 package csc213.ottplatfrom.Rajmee;
 
-/**
- * Content --> Genre (many-to-one association in the UML diagram).
- */
+
 public class Genre {
 
     private final int genreId;

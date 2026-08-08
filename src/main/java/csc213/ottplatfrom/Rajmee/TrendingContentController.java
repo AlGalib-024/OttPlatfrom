@@ -28,9 +28,9 @@ public class TrendingContentController  {
 
 
     public void initialize() {
-        periodComboBox.setItems(FXCollections.observableArrayList(
+        periodComboBox.getItems().addAll(
                 "Last 7 Days", "Last 30 Days", "Last 3 Months", "Last 6 Months"
-        ));
+        );
         rankColumn.setCellValueFactory(c -> new SimpleIntegerProperty(c.getValue().rank).asObject());
         titleColumn.setCellValueFactory(c -> new SimpleStringProperty(c.getValue().title));
         viewsColumn.setCellValueFactory(c -> new SimpleIntegerProperty(c.getValue().views).asObject());

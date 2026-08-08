@@ -19,12 +19,12 @@ public class GenerateMarketingReportController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        reportTypeComboBox.setItems(FXCollections.observableArrayList(
+        reportTypeComboBox.getItems().addAll(
                 "Campaign Summary", "Subscriber Engagement", "Content Promotion", "Overall Marketing"
-        ));
-        reportPeriodComboBox.setItems(FXCollections.observableArrayList(
+        );
+        reportPeriodComboBox.getItems().addAll(
                 "This Week", "This Month", "This Quarter", "This Year"
-        ));
+        );
     }
 
     @FXML

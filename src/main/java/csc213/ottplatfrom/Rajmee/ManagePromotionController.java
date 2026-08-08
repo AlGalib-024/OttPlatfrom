@@ -25,9 +25,9 @@ public class ManagePromotionController  {
     private ToggleGroup tg;
 
     public void initialize() {
-        audienceComboBox.setItems(FXCollections.observableArrayList(
+        audienceComboBox.getItems().addAll(
                 "All Subscribers", "Premium Subscribers", "Basic Subscribers", "New Users"
-        ));
+        );
     }
 
     @FXML
