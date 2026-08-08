@@ -1,52 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc213.ottplatfrom.NusratJahan.CeoDashboardController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.NusratJahan.CeoDashboardController">
 
     <top>
-        <Label text="CEO Dashboard" style="-fx-font-size: 22px; -fx-font-weight: bold;">
-            <BorderPane.margin><Insets top="15" left="15" bottom="5"/></BorderPane.margin>
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="CEO Dashboard">
+            <BorderPane.margin><Insets bottom="5" left="15" top="15" /></BorderPane.margin>
         </Label>
     </top>
 
     <left>
-        <VBox spacing="8" prefWidth="220">
-            <padding><Insets top="10" left="15" right="10"/></padding>
-            <Button text="Manage User Accounts" maxWidth="Infinity" onAction="#goManageUsers"/>
-            <Button text="Manage Featured Content" maxWidth="Infinity" onAction="#goFeaturedContent"/>
-            <Button text="Content List" maxWidth="Infinity" onAction="#goContentList"/>
-            <Button text="Subscription Plans" maxWidth="Infinity" onAction="#goSubscriptionPlans"/>
-            <Button text="Customer Feedback" maxWidth="Infinity" onAction="#goCustomerFeedback"/>
-            <Button text="Subscriber Details" maxWidth="Infinity" onAction="#goSubscriberDetails"/>
-            <Button text="Manage Announcements" maxWidth="Infinity" onAction="#goAnnouncements"/>
+        <VBox prefHeight="362.0" prefWidth="251.0" spacing="8">
+            <padding><Insets left="15" right="10" top="10" /></padding>
+            <Button maxWidth="Infinity" onAction="#goManageUsers" text="Manage User Accounts" />
+            <Button maxWidth="Infinity" onAction="#goFeaturedContent" text="Manage Featured Content" />
+            <Button maxWidth="Infinity" onAction="#goContentList" text="Content List" />
+            <Button maxWidth="Infinity" onAction="#goSubscriptionPlans" text="Subscription Plans" />
+            <Button maxWidth="Infinity" onAction="#goCustomerFeedback" text="Customer Feedback" />
+            <Button maxWidth="Infinity" onAction="#goSubscriberDetails" text="Subscriber Details" />
+            <Button maxWidth="Infinity" onAction="#goAnnouncements" text="Manage Announcements" />
         </VBox>
     </left>
 
     <center>
         <VBox spacing="12">
-            <padding><Insets top="20" left="20" right="20"/></padding>
+            <padding><Insets left="20" right="20" top="20" /></padding>
 
-            <Label text="View Business Dashboard" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="View Business Dashboard" />
 
-            <HBox spacing="10" alignment="CENTER_LEFT">
-                <Label text="Dashboard Period:"/>
-                <ComboBox fx:id="periodBox"/>
-                <Button text="View Dashboard" onAction="#handleViewDashboard"/>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Dashboard Period:" />
+                <ComboBox fx:id="periodBox" />
+                <Button onAction="#handleViewDashboard" text="View Dashboard" />
             </HBox>
 
             <GridPane hgap="20" vgap="10">
-                <padding><Insets top="10"/></padding>
-                <Label text="Total Subscribers:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-                <Label fx:id="totalSubscribersLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-                <Label text="Total Revenue:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-                <Label fx:id="totalRevenueLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-                <Label text="Total Content Items:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-                <Label fx:id="totalContentLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-                <Label text="Pending Payments:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-                <Label fx:id="pendingPaymentsLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <padding><Insets top="10" /></padding>
+                <Label style="-fx-font-weight: bold;" text="Total Subscribers:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="totalSubscribersLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label style="-fx-font-weight: bold;" text="Total Revenue:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="totalRevenueLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label style="-fx-font-weight: bold;" text="Total Content Items:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="totalContentLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label style="-fx-font-weight: bold;" text="Pending Payments:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="pendingPaymentsLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
             </GridPane>
         </VBox>
     </center>

@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc213.ottplatfrom.NusratJahan.ContentListController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.NusratJahan.ContentListController">
 
 <top>
-        <Label text="Content List" style="-fx-font-size: 20px; -fx-font-weight: bold;">
-            <BorderPane.margin><Insets top="15" left="15" bottom="10"/></BorderPane.margin>
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Content List">
+            <BorderPane.margin><Insets bottom="10" left="15" top="15" /></BorderPane.margin>
         </Label>
     </top>
     <center>
         <TableView fx:id="contentTable">
             <columns>
-                <TableColumn fx:id="colContentId" text="Content ID" prefWidth="90"/>
-                <TableColumn fx:id="colTitle" text="Title" prefWidth="180"/>
-                <TableColumn fx:id="colType" text="Type" prefWidth="80"/>
-                <TableColumn fx:id="colGenre" text="Genre" prefWidth="100"/>
-                <TableColumn fx:id="colYear" text="Release Year" prefWidth="100"/>
-                <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="colContentId" prefWidth="90" text="Content ID" />
+                <TableColumn fx:id="colTitle" prefWidth="180" text="Title" />
+                <TableColumn fx:id="colType" prefWidth="80" text="Type" />
+                <TableColumn fx:id="colGenre" prefWidth="100" text="Genre" />
+                <TableColumn fx:id="colYear" prefWidth="100" text="Release Year" />
+                <TableColumn fx:id="colStatus" prefWidth="100" text="Status" />
             </columns>
-            <BorderPane.margin><Insets left="15" right="15"/></BorderPane.margin>
+            <BorderPane.margin><Insets left="15" right="15" /></BorderPane.margin>
         </TableView>
     </center>
     <bottom>
-        <HBox spacing="10" alignment="CENTER_RIGHT">
-            <padding><Insets top="10" bottom="15" right="15"/></padding>
-            <Button text="Back" onAction="#handleBack"/>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <padding><Insets bottom="15" right="15" top="10" /></padding>
+            <Button onAction="#handleBack" prefHeight="26.0" prefWidth="95.0" text="Back" />
         </HBox>
     </bottom>
 </BorderPane>

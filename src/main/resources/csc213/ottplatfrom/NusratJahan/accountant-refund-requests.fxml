@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc213.ottplatfrom.NusratJahan.RefundRequestsController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.NusratJahan.RefundRequestsController">
     <top>
-        <Label text="Refund Requests" style="-fx-font-size: 20px; -fx-font-weight: bold;">
-            <BorderPane.margin><Insets top="15" left="15" bottom="10"/></BorderPane.margin>
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Refund Requests">
+            <BorderPane.margin><Insets bottom="10" left="15" top="15" /></BorderPane.margin>
         </Label>
     </top>
     <center>
         <TableView fx:id="refundTable">
             <columns>
-                <TableColumn fx:id="colRequestId" text="Request ID" prefWidth="100"/>
-                <TableColumn fx:id="colSubscriberName" text="Subscriber Name" prefWidth="160"/>
-                <TableColumn fx:id="colAmount" text="Amount" prefWidth="90"/>
-                <TableColumn fx:id="colReason" text="Reason" prefWidth="220"/>
-                <TableColumn fx:id="colStatus" text="Status" prefWidth="90"/>
+                <TableColumn fx:id="colRequestId" prefWidth="100" text="Request ID" />
+                <TableColumn fx:id="colSubscriberName" prefWidth="160" text="Subscriber Name" />
+                <TableColumn fx:id="colAmount" prefWidth="90" text="Amount" />
+                <TableColumn fx:id="colReason" prefWidth="220" text="Reason" />
+                <TableColumn fx:id="colStatus" prefWidth="90" text="Status" />
             </columns>
-            <BorderPane.margin><Insets left="15" right="15"/></BorderPane.margin>
+            <BorderPane.margin><Insets left="15" right="15" /></BorderPane.margin>
         </TableView>
     </center>
     <bottom>
-        <HBox spacing="10" alignment="CENTER_RIGHT">
-            <padding><Insets top="10" bottom="15" right="15"/></padding>
-            <Button text="Back" onAction="#handleBack"/>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <padding><Insets bottom="15" right="15" top="10" /></padding>
+            <Button onAction="#handleBack" prefHeight="26.0" prefWidth="105.0" text="Back" />
         </HBox>
     </bottom>
 </BorderPane>

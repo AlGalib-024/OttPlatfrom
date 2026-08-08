@@ -86,42 +86,42 @@ public class CeoDashboardController {
 
     @FXML
     public void handleViewDashboard(ActionEvent actionEvent) {
-        loadScene("CeoDashboard.fxml", actionEvent);
+        loadScene("ceo-dashboard.fxml", actionEvent);
     }
 
     @FXML
     public void goManageUsers(ActionEvent actionEvent) {
-        loadScene("ManageUsers.fxml", actionEvent);
+        loadScene("ceo-manage-users.fxml", actionEvent);
     }
 
     @FXML
     public void goContentList(ActionEvent actionEvent) {
-        loadScene("ContentList.fxml", actionEvent);
+        loadScene("ceo-content-list.fxml", actionEvent);
     }
 
     @FXML
     public void goFeaturedContent(ActionEvent actionEvent) {
-        loadScene("FeaturedContent.fxml", actionEvent);
+        loadScene("ceo-featured-content.fxml", actionEvent);
     }
 
     @FXML
     public void goSubscriptionPlans(ActionEvent actionEvent) {
-        loadScene("SubscriptionPlans.fxml", actionEvent);
+        loadScene("ceo-subscription-plans.fxml", actionEvent);
     }
 
     @FXML
     public void goSubscriberDetails(ActionEvent actionEvent) {
-        loadScene("SubscriberDetails.fxml", actionEvent);
+        loadScene("ceo-subscriber-details.fxml", actionEvent);
     }
 
     @FXML
     public void goAnnouncements(ActionEvent actionEvent) {
-        loadScene("Announcements.fxml", actionEvent);
+        loadScene("ceo-announcements.fxml", actionEvent);
     }
 
     @FXML
     public void goCustomerFeedback(ActionEvent actionEvent) {
-        loadScene("CustomerFeedback.fxml", actionEvent);
+        loadScene("ceo-customer-feedback.fxml", actionEvent);
     }
 
 

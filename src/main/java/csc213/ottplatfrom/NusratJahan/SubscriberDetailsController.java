@@ -84,7 +84,7 @@ public class SubscriberDetailsController {
     public void handleBack(ActionEvent actionEvent) {
         SceneSwitcher.switchScene(
                 actionEvent,
-                "/csc213/ottplatfrom/NusratJahan/CeoDashboard.fxml",
+                "/csc213/ottplatfrom/NusratJahan/ceo-dashboard.fxml",
                 "CEO Dashboard"
         );
     }

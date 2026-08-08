@@ -1,36 +1,58 @@
 package csc213.ottplatfrom.NusratJahan;
 
+import csc213.ottplatfrom.SceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class AnnouncementsController
 {
-    @javafx.fxml.FXML
+    @FXML
     private TextField titleField;
-    @javafx.fxml.FXML
+    @FXML
     private TextArea announcementArea;
-    @javafx.fxml.FXML
+    @FXML
     private Label statusLabel;
 
-    @javafx.fxml.FXML
+    @FXML
     public void initialize() {
+        statusLabel.setText("");
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleBack(ActionEvent actionEvent) {
+        SceneSwitcher.switchScene(actionEvent, "/csc213/ottplatfrom/NusratJahan/ceo-dashboard.fxml", "CEO Dashboard");
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleClear(ActionEvent actionEvent) {
+        titleField.clear();
+        announcementArea.clear();
+        statusLabel.setText("");
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleSave(ActionEvent actionEvent) {
+        saveOrUpdate();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void handleUpdate(ActionEvent actionEvent) {
+        saveOrUpdate();
+    }
+
+    private void saveOrUpdate() {
+        String title = titleField.getText().trim();
+        String text = announcementArea.getText().trim();
+
+        if (title.isEmpty() || text.isEmpty()) {
+            statusLabel.setText("Title and announcement cannot be empty.");
+            return;
+        }
+
+        DataStore.saveAnnouncement(title, text);
+        statusLabel.setText("Announcement saved successfully.");
     }
 }

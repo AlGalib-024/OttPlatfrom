@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc213.ottplatfrom.NusratJahan.SubscriptionPlansController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="584.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.NusratJahan.SubscriptionPlansController">
     <top>
-        <Label text="Subscription Plans" style="-fx-font-size: 20px; -fx-font-weight: bold;">
-            <BorderPane.margin><Insets top="15" left="15" bottom="10"/></BorderPane.margin>
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Subscription Plans">
+            <BorderPane.margin><Insets bottom="10" left="15" top="15" /></BorderPane.margin>
         </Label>
     </top>
     <center>
         <TableView fx:id="planTable">
             <columns>
-                <TableColumn fx:id="colPlanId" text="Plan ID" prefWidth="90"/>
-                <TableColumn fx:id="colPlanName" text="Plan Name" prefWidth="150"/>
-                <TableColumn fx:id="colPrice" text="Current Price" prefWidth="120"/>
+                <TableColumn fx:id="colPlanId" prefWidth="90" text="Plan ID" />
+                <TableColumn fx:id="colPlanName" prefWidth="150" text="Plan Name" />
+                <TableColumn fx:id="colPrice" prefWidth="120" text="Current Price" />
             </columns>
-            <BorderPane.margin><Insets left="15" right="15"/></BorderPane.margin>
+            <BorderPane.margin><Insets left="15" right="15" /></BorderPane.margin>
         </TableView>
     </center>
     <bottom>
         <VBox spacing="10">
-            <padding><Insets top="10" bottom="15" left="15" right="15"/></padding>
-            <HBox spacing="10" alignment="CENTER_LEFT">
-                <Label text="New Price:"/>
-                <TextField fx:id="newPriceField" prefWidth="100"/>
-                <Button text="Update" onAction="#handleUpdate"/>
-                <Button text="Back" onAction="#handleBack"/>
+            <padding><Insets bottom="15" left="15" right="15" top="10" /></padding>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="New Price:" />
+                <TextField fx:id="newPriceField" prefWidth="100" />
+                <Button onAction="#handleUpdate" text="Update" />
+                <Button onAction="#handleBack" prefHeight="28.0" prefWidth="80.0" text="Back" />
             </HBox>
-            <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+            <Label fx:id="statusLabel" style="-fx-text-fill: green;" />
         </VBox>
     </bottom>
 </BorderPane>
