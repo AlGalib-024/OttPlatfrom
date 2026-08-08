@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.rajmee.CreateCampaignController">
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.Rajmee.CreateCampaignController">
 
     <Text layoutX="250.0" layoutY="30.0" style="-fx-font-size:20px; -fx-font-weight:bold;" text="Create Marketing Campaign" />
 

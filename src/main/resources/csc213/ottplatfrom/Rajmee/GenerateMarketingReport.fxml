@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc213.ottplatfrom.rajmee.GenerateMarketingReportController"
+            fx:controller="csc213.ottplatfrom.Rajmee.GenerateMarketingReportController"
             prefHeight="500.0"
             prefWidth="700.0">
 

@@ -6,7 +6,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc213.ottplatfrom.rajmee.ContentManagerDashboardController"
+            fx:controller="csc213.ottplatfrom.Rajmee.ContentManagerDashboardController"
             prefHeight="500.0"
             prefWidth="700.0">
 

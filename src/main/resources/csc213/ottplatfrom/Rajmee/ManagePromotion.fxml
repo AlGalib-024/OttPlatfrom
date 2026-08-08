@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="750.0" styleClass="tg" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.rajmee.ManagePromotionController">
+<AnchorPane prefHeight="550.0" prefWidth="750.0" styleClass="tg" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.Rajmee.ManagePromotionController">
 
     <children>
 
