@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="csc213.ottplatfrom.NusratJahan.CeoDashboardController">
+
+    <top>
+        <Label text="CEO Dashboard" style="-fx-font-size: 22px; -fx-font-weight: bold;">
+            <BorderPane.margin><Insets top="15" left="15" bottom="5"/></BorderPane.margin>
+        </Label>
+    </top>
+
+    <left>
+        <VBox spacing="8" prefWidth="220">
+            <padding><Insets top="10" left="15" right="10"/></padding>
+            <Button text="Manage User Accounts" maxWidth="Infinity" onAction="#goManageUsers"/>
+            <Button text="Manage Featured Content" maxWidth="Infinity" onAction="#goFeaturedContent"/>
+            <Button text="Content List" maxWidth="Infinity" onAction="#goContentList"/>
+            <Button text="Subscription Plans" maxWidth="Infinity" onAction="#goSubscriptionPlans"/>
+            <Button text="Customer Feedback" maxWidth="Infinity" onAction="#goCustomerFeedback"/>
+            <Button text="Subscriber Details" maxWidth="Infinity" onAction="#goSubscriberDetails"/>
+            <Button text="Manage Announcements" maxWidth="Infinity" onAction="#goAnnouncements"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="12">
+            <padding><Insets top="20" left="20" right="20"/></padding>
+
+            <Label text="View Business Dashboard" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Dashboard Period:"/>
+                <ComboBox fx:id="periodBox"/>
+                <Button text="View Dashboard" onAction="#handleViewDashboard"/>
+            </HBox>
+
+            <GridPane hgap="20" vgap="10">
+                <padding><Insets top="10"/></padding>
+                <Label text="Total Subscribers:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="totalSubscribersLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Total Revenue:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="totalRevenueLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Total Content Items:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="totalContentLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="Pending Payments:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                <Label fx:id="pendingPaymentsLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+    </center>
+
+</BorderPane>
