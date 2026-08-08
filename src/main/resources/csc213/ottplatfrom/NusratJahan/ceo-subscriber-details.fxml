@@ -13,7 +13,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc213.ottplatfrom.NusratJahan.SubscriberDetailsController">
     <top>
-        <VBox spacing="10">
+        <VBox alignment="TOP_CENTER" prefHeight="138.0" prefWidth="443.0" spacing="10">
             <padding><Insets bottom="10" left="15" right="15" top="15" /></padding>
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Subscriber Details" />
             <HBox alignment="CENTER_LEFT" spacing="10">
@@ -26,17 +26,17 @@
         </VBox>
     </top>
     <center>
-        <GridPane hgap="15" vgap="12">
+        <GridPane alignment="CENTER" hgap="15" vgap="12">
             <padding><Insets left="20" right="20" top="10" /></padding>
             <Label style="-fx-font-weight: bold;" text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <Label fx:id="nameLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Label style="-fx-font-weight: bold;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="89.0" style="-fx-font-weight: bold;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <Label fx:id="emailLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label style="-fx-font-weight: bold;" text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label prefHeight="20.0" prefWidth="86.0" style="-fx-font-weight: bold;" text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Label fx:id="phoneLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label style="-fx-font-weight: bold;" text="Country:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label prefHeight="21.0" prefWidth="83.0" style="-fx-font-weight: bold;" text="Country:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <Label fx:id="countryLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label style="-fx-font-weight: bold;" text="Plan:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label prefHeight="23.0" prefWidth="80.0" style="-fx-font-weight: bold;" text="Plan:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
             <Label fx:id="planLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label style="-fx-font-weight: bold;" text="Expiry Date:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
             <Label fx:id="expiryLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
